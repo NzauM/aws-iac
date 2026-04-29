@@ -28,6 +28,7 @@ export class CapstoneStack extends cdk.Stack {
           const client = new SSMClient({ region: process.env.AWS_REGION });
           const command = new GetParameterCommand({ Name: '/app/config/greeting' });
           const response = await client.send(command);
+          console.log('The greeting is: ',response.Parameter.Value)
           return { greeting: response.Parameter.Value };
         };
       `),
