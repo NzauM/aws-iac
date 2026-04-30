@@ -13,7 +13,7 @@ export class CapstoneStack extends cdk.Stack {
     // Define SSM parameter for greeting config
     const configParam = new ssm.StringParameter(this, 'GreetingParameter', {
       parameterName: '/app/config/greeting',
-      stringValue: 'Hello, Welcome to Capstone!, Update during build',
+      stringValue: 'Hello from CI/CD Automated Infrastructure!',
       description: 'Greeting message for the application',
     });
 
